@@ -11,7 +11,7 @@ const CustomerData = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const result = await axios.get("http://localhost:4000/api/TaskManager");
+        const result = await axios.get(`${process.env.REACT_APP_URL}/api/TaskManager`);
 
         if (result.data.success) {
           setCustomers(result.data.data);
@@ -35,7 +35,7 @@ const CustomerData = () => {
 
   const deleteData = async (customerId) => {
     try {
-      await axios.delete(`http://localhost:4000/api/TaskManager/${customerId}`);
+      await axios.delete(`${process.env.REACT_APP_URL}/api/TaskManager/${customerId}`);
       setCustomers(customers.filter((c) => c._id !== customerId));
     } catch (err) {
       console.error(err);
@@ -45,7 +45,7 @@ const CustomerData = () => {
 
   const deleteAllData = async () => {
     try {
-      await axios.delete("http://localhost:4000/api/TaskManager/Customer/deleteAll");
+      await axios.delete(`${process.env.REACT_APP_URL}/api/TaskManager/Customer/deleteAll`);
       setCustomers([]);
       SetSuccess("Deleted All Task")
     } catch (error) {

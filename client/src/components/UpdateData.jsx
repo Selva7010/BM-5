@@ -19,7 +19,7 @@ export default function UpdateData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get(`http://localhost:4000/api/TaskManager/${id}`);
+        const result = await axios.get(`${process.env.REACT_APP_URL}/api/TaskManager/${id}`);
 
         if (result.data?.success) {
           setFormData(result.data.data);
@@ -42,7 +42,7 @@ export default function UpdateData() {
   // Update
   const handleUpdate = async () => {
     try {
-      const update = await axios.patch(`http://localhost:4000/api/TaskManager/update/${id}`, formData);
+      const update = await axios.patch(`${process.env.REACT_APP_URL}/api/TaskManager/update/${id}`, formData);
 
       if(update.data?.success){
         setSuccess("Updated Successfully!");
