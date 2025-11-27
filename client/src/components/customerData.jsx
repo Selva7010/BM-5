@@ -29,8 +29,8 @@ const CustomerData = () => {
     fetchCustomers();
   }, []);
 
-  const updateData = (customer) => {
-    navigate(`/updateData/${customer}`);
+  const updateData = (customerId) => {
+    navigate(`/updateData/${customerId}`);
   };
 
   const deleteData = async (customerId) => {
@@ -80,11 +80,11 @@ const CustomerData = () => {
         </button>
         </div>
 
-        <table className="table">
+        <table className="table w-full">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Description</th>
+              <th className="text-start">Title</th>
+              <th className="text-start">Description</th>
               <th className="text-center">Action</th>
             </tr>
           </thead>

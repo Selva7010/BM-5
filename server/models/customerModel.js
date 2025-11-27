@@ -7,6 +7,6 @@ const customerSchema = new mongoose.Schema({
     
 });
 
-const TaskManager = mongoose.models.TaskManager || mongoose.model("TaskManager", customerSchema);
+const PersonalTaskManager = mongoose.models.PersonalTaskManager || mongoose.model("PersonalTaskManager", customerSchema);
 
-export default TaskManager;
+export default PersonalTaskManager;
